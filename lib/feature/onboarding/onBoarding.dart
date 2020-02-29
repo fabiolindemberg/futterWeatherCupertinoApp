@@ -12,9 +12,10 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String description = "This project is a simple Flutter App, that list the forty cities closer you and give weather information about them!";
     return PageView(children: <Widget>[
-      this.pageItem(OnBoardingItem("lib/images/sun_snow.jpg", "Weather APP", "Welcome, check the weather and enjoin you day!", null)),
-      this.pageItem(OnBoardingItem("lib/images/sun_rain.jpg", "Thank you to join us!", "Get Started!", Button("Get Started Now!!", () {
+      this.pageItem(OnBoardingItem("lib/images/sun_snow.jpg", "Weather APP", description, null)),
+      this.pageItem(OnBoardingItem("lib/images/sun_rain.jpg", "Thank you to join us!", "Go ahead and check the weather around you!", Button("Get Started Now!!", () {
         Navigator.of(context).push(CupertinoPageRoute(builder: (contex) => CityList(CityServiceImpl())));
       }))),
 
@@ -35,7 +36,7 @@ class OnBoarding extends StatelessWidget {
         Container(color: Color(0x000000).withOpacity(0.6),),
         Center(
           child: Padding(
-            padding: const EdgeInsets.only(bottom: 200),
+            padding: const EdgeInsets.fromLTRB(24, 0, 24, 200),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -46,8 +47,9 @@ class OnBoarding extends StatelessWidget {
                   color: Colors.white),
                   ),
                 Text(item.secondaryText,
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   color: Colors.white
                   ),
                 ),

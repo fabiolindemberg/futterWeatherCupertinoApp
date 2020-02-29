@@ -45,7 +45,7 @@ class _CityList extends State<CityList> {
   _noDataFoundMessage() {
     return Container(
       child: Center(
-        child: Text("No data found!"),
+        child: CupertinoActivityIndicator()
       ),
     );
   }
